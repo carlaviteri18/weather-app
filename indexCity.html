@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Signika&family=Work+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/88c8fd4f02.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Weather Application</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" id="all" style="display: block;">
+        <div class="card-body">
+          <h5 class="card-title">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a
+                class="navbar-brand d-inline p-2 bg-dark text-white"
+                href="indexCity.html"
+                ><i class="far fa-star"></i>The Weather App</a
+              >
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </nav>
+          </h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <div class="card search-bar">
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="search-city"
+                      placeholder="Enter your city"
+                      autocomplete="off"
+                      autofocus
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-dark">Search</button>
+                  <button type="submit" class="btn btn-success">Current</button>
+                </form>
+              </div>
+            </div>
+          </h6>
+          <p class="card-text"></p>
+          <h1 style="font-weight: bolder;">
+            <i class="fas fa-rainbow"></i>
+            <span id="banner">Welcome</span>
+          </h1>
+          <br />
+          <br />
+
+          <div class="clearfix forecast" style="float: left;">
+            <i class="fas fa-calendar-alt"></i>
+            <h6 id="current-time"></h6>
+            <br />
+            <br />
+            <h2>
+              <span id="icon"><i class="fas fa-stream"></i></span>
+              <strong>
+                <span id="current-degrees">Search in</span>
+                <small>
+                  <a id="celsius" href="#" style="color: #272044;">°C</a>|
+                  <a id="fahrenheit" href="#" style="color: #272044;">°F</a>
+                </small>
+              </strong>
+              <br />
+              <span id="weather-description"
+                ><strong><br /> </strong
+              ></span>
+            </h2>
+          </div>
+          <br />
+          <br />
+          <br />
+
+          <div class="row">
+            <div class="col-6">
+              <div class="card information">
+                <h5 class="card-header">
+                  More details
+                  <span style="margin-left: 100px;"
+                    ><i class="fas fa-bell"></i
+                  ></span>
+                </h5>
+                <div class="card-body">
+                  <h5 class="card-title">Weather information</h5>
+                  <p class="card-text" id="weather-info">
+                    <span>Humidity</span><br />
+                    <span>Wind Speed</span>
+                  </p>
+
+                  <a href="indexCity.html" class="btn btn-dark"
+                    >Back to main menu</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="card information">
+                <h5 class="card-header">
+                  Watch for
+                  <span style="margin-left: 120px;"
+                    ><i class="fas fa-exclamation-circle"></i
+                  ></span>
+                </h5>
+                <div class="card-body">
+                  <h5 class="card-title">Warnings</h5>
+                  <p class="card-text">
+                    No weather alerts at the moment!
+                    <i class="fas fa-globe-americas"></i>
+                  </p>
+
+                  <a href="indexCity.html" class="btn btn-dark"
+                    >Back to main menu</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row align-items-start border p-5 mt-3 rounded shadow week-forecast"
+          >
+            <div class="col-2">
+              <p>
+                <em>Friday</em>
+                <br />
+                <i class="fas fa-cloud-sun"></i>
+                <br />
+                <small>21°|12°</small>
+              </p>
+            </div>
+            <div class="col-3">
+              <p>
+                <strong>Saturday</strong>
+                <br />
+                <i class="fas fa-cloud-sun"></i>
+                <br />
+                <small>24°|14°</small>
+              </p>
+            </div>
+            <div class="col-2">
+              <p>
+                <em>Sunday</em>
+                <br />
+                <i class="fas fa-sun"></i>
+                <br />
+                <small>27°|17°</small>
+              </p>
+            </div>
+            <div class="col-3">
+              <p>
+                <strong>Monday</strong>
+                <br />
+                <i class="fas fa-cloud-sun"></i>
+                <br />
+                <small>23°|11°</small>
+              </p>
+            </div>
+            <div class="col-2">
+              <p>
+                <em>Tuesday</em>
+                <br />
+                <i class="fas fa-cloud-sun"></i>
+                <br />
+                <small>20°|11°</small>
+              </p>
+            </div>
+          </div>
+          <a href="#" class="card-link">
+            <footer>
+              <small>Coded by Carla Viteri <i class="far fa-moon"></i></small>
+            </footer>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

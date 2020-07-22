@@ -106,15 +106,15 @@ function showFahrenheit(response) {
 }
 
 //Current location button - celsius
-function geoLocC() {
-  navigator.geolocation.getCurrentPosition(showMyLocationC);
-}
-
 let button = document.querySelector(`.btn-success`);
 button.addEventListener(`click`, geoLocC);
 
 let celsiusCurrent = document.querySelector(`#celsius`);
 celsiusCurrent.addEventListener(`click`, geoLocC);
+
+function geoLocC() {
+  navigator.geolocation.getCurrentPosition(showMyLocationC);
+}
 
 function showMyLocationC(position) {
   let apiKey = `5823f95be100eb78af18e8efbba8c1c5`;
@@ -153,12 +153,12 @@ function showMyTempC(response) {
 }
 
 //Current location button - fahrenheit
+let fahrenheitCurrent = document.querySelector(`#fahrenheit`);
+fahrenheitCurrent.addEventListener(`click`, geoLocF);
+
 function geoLocF() {
   navigator.geolocation.getCurrentPosition(showMyLocationF);
 }
-
-let fahrenheitCurrent = document.querySelector(`#fahrenheit`);
-fahrenheitCurrent.addEventListener(`click`, geoLocF);
 
 function showMyLocationF(position) {
   let apiKey = `5823f95be100eb78af18e8efbba8c1c5`;

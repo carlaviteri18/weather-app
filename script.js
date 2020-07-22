@@ -65,7 +65,7 @@ function showTemp(response) {
   weatherDisplay.innerHTML = `${temp}`;
 
   let weatherInfo = document.querySelector(`#weather-info`);
-  weatherInfo.innerHTML = `Humidity: ${response.data.main.humidity} kg/m3, <br/> Wind Speed: ${response.data.wind.speed} kmph`;
+  weatherInfo.innerHTML = `Humidity: ${response.data.main.humidity} kg/m<sup>3</sup>, <br/> Wind Speed: ${response.data.wind.speed} kmph`;
 
   response.data.weather.forEach((element) => {
     let theDescription = element.description;
@@ -102,7 +102,7 @@ function showFahrenheit(response) {
   weatherDisplay.innerHTML = `${temp}`;
 
   let weatherInfo = document.querySelector(`#weather-info`);
-  weatherInfo.innerHTML = `Humidity: ${response.data.main.humidity} lbs/ft3 <br/> Wind Speed: ${response.data.wind.speed} mph`;
+  weatherInfo.innerHTML = `Humidity: ${response.data.main.humidity} lbs/ft<sup>3</sup> <br/> Wind Speed: ${response.data.wind.speed} mph`;
 }
 
 //Current location button - celsius
@@ -136,7 +136,7 @@ function showMyTempC(response) {
   heading.innerHTML = `${response.data.name}`;
 
   let weatherInfo = document.querySelector(`#weather-info`);
-  weatherInfo.innerHTML = `Humidity: ${response.data.main.humidity} kg/m3 <br/> Wind Speed: ${response.data.wind.speed} kmph`;
+  weatherInfo.innerHTML = `Humidity: ${response.data.main.humidity} kg/m<sup>3</sup> <br/> Wind Speed: ${response.data.wind.speed} kmph`;
 
   response.data.weather.forEach((element) => {
     let theDescription = element.description;
@@ -177,5 +177,5 @@ function showMyTempF(response) {
   weatherDisplay.innerHTML = `${temp}`;
 
   let weatherInfo = document.querySelector(`#weather-info`);
-  weatherInfo.innerHTML = `Humidity: ${response.data.main.humidity} lbs/ft3 <br/> Wind Speed: ${response.data.wind.speed} mph`;
+  weatherInfo.innerHTML = `Humidity: ${response.data.main.humidity} lbs/ft<sup>3</sup> <br/> Wind Speed: ${response.data.wind.speed} mph`;
 }

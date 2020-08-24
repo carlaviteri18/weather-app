@@ -103,6 +103,8 @@ search("Lima");
 
 //Displaying temperature in C and F
 
+let celsiusTemperature = null;
+
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");

@@ -1,6 +1,6 @@
 //Displaying Time
-function theDate(currentTime) {
-  let date = new Date(currentTime);
+function theDate(timestamp) {
+  let date = new Date(timestamp);
 
   let days = [
     "Sunday",
@@ -12,11 +12,11 @@ function theDate(currentTime) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${theHours(currentTime)}`;
+  return `${day} ${theHours(timestamp)}`;
 }
 
-function theHours(currentTime) {
-  let date = new Date(currentTime);
+function theHours(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 0) {
     hours = `0${hours}`;
